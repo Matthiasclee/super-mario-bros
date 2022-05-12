@@ -1,4 +1,5 @@
 build/
 *.nes
 *.pal
+smbc
 smbc.conf
