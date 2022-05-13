@@ -210,14 +210,29 @@ static void mainLoop()
          * BUTTON_RIGHT: RIGHT
          */
 
-        controller1.setButtonState(BUTTON_A, keys[SDL_SCANCODE_W]);
-        controller1.setButtonState(BUTTON_B, keys[SDL_SCANCODE_LSHIFT]);
-        controller1.setButtonState(BUTTON_SELECT, keys[SDL_SCANCODE_RSHIFT]);
-        controller1.setButtonState(BUTTON_START, keys[SDL_SCANCODE_RETURN]);
-        controller1.setButtonState(BUTTON_UP, keys[SDL_SCANCODE_UP]);
-        controller1.setButtonState(BUTTON_DOWN, keys[SDL_SCANCODE_S]);
-        controller1.setButtonState(BUTTON_LEFT, keys[SDL_SCANCODE_A]);
-        controller1.setButtonState(BUTTON_RIGHT, keys[SDL_SCANCODE_D]);
+        controller1.setButtonState(BUTTON_A,
+            (keys[SDL_SCANCODE_W] || keys[SDL_SCANCODE_SPACE]));
+
+        controller1.setButtonState(BUTTON_B,
+            keys[SDL_SCANCODE_LSHIFT]);
+
+        controller1.setButtonState(BUTTON_SELECT,
+            keys[SDL_SCANCODE_RSHIFT]);
+
+        controller1.setButtonState(BUTTON_START,
+            keys[SDL_SCANCODE_RETURN]);
+
+        controller1.setButtonState(BUTTON_UP,
+            keys[SDL_SCANCODE_UP]);
+
+        controller1.setButtonState(BUTTON_DOWN,
+            (keys[SDL_SCANCODE_S] || keys[SDL_SCANCODE_DOWN]));
+
+        controller1.setButtonState(BUTTON_LEFT,
+            (keys[SDL_SCANCODE_A] || keys[SDL_SCANCODE_LEFT]));
+
+        controller1.setButtonState(BUTTON_RIGHT,
+            (keys[SDL_SCANCODE_D] || keys[SDL_SCANCODE_RIGHT]));
 
         if (keys[SDL_SCANCODE_R])
         {
